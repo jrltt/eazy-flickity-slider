@@ -1,6 +1,5 @@
 <?php 
 if ('is_admin') {
-
 	//add admin CSS & JS
 	if (!function_exists('eazy_flickity_admin_styles_scripts')) {
 		add_action( 'admin_enqueue_scripts', 'eazy_flickity_admin_styles_scripts' );    
@@ -9,8 +8,7 @@ if ('is_admin') {
 			wp_register_style('eazy-flickity-admin-css', plugins_url( 'css/admin-style.css', __FILE__ ), false, '1.0', false );
 			wp_enqueue_style('eazy-flickity-admin-css');
 		} 
-	}
-	//end !function_exists('eazy_flickity_admin_styles_scripts')
+	} // end !function_exists('eazy_flickity_admin_styles_scripts')
 
 	add_action('current_screen', 'eazy_flickity_load_admin');
 	function eazy_flickity_load_admin() {
@@ -82,7 +80,7 @@ if ('is_admin') {
 						add_action('manage_pages_custom_column', 'posts_custom_columns', 5, 2);
 					}
 					function posts_columns($defaults) {
-						$defaults['eazy_flickity_image'] = __('Slider Image');
+						$defaults['eazy_flickity_image'] = __('Test Image');
 						return $defaults;
 					}
 					function posts_custom_columns($column_name, $id){

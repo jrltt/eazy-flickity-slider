@@ -6,7 +6,7 @@ if (function_exists('eazy_flickity_slides')) {
 			'eazy_flickity_slider' 	=>		'homepage'
 		);
 
-		$the_query = new WP_Query( $args ); ?>
+		$the_query = new WP_Query($args);
 
 		if ( $the_query->have_posts() ) : ?>
 			<div class="eazy-flickity-homepage-slider">

@@ -1,14 +1,10 @@
 <?php
 if (!function_exists('eazy_flickity_slides')) {
-	//Hook into init to add slides (custom post type)
-	add_action( 'init', 'eazy_flickity_slides', 0 );
-	// Hook into init to add sliders (custom taxonomy)
-	add_action( 'init', 'eazy_flickity_slider', 0 );
-	//flush rewrite rules
-	add_action('init', 'flush_rewrite_rules', 10 );
+	add_action( 'init', 'eazy_flickity_slides', 0 ); // Hook into init to add slides (custom post type)
+	add_action( 'init', 'eazy_flickity_slider', 0 ); // Hook into init to add sliders (custom taxonomy)
+	add_action('init', 'flush_rewrite_rules', 10 ); // flush rewrite rules
 
-	//register custom post type to be used as slider images
-	function eazy_flickity_slides() {
+	function eazy_flickity_slides() { // register custom post type to be used as slider images
 	  $labels = array(
 			'name'                => _x( 'Eazy Flickity Slides', 'Post Type General Name', 'ez-flickity-slider' ),
 			'singular_name'       => _x( 'Eazy Flickity Slide', 'Post Type Singular Name', 'ez-flickity-slider' ),
@@ -78,7 +74,7 @@ if (!function_exists('eazy_flickity_slides')) {
 			'show_in_nav_menus'          => true,
 			'show_tagcloud'              => false,
 	  );
-	  register_taxonomy( 'eazy_flickity_slider', array( 'eazy_flickity_slide' ), $args );
+	  register_taxonomy('eazy_flickity_slider', array('eazy_flickity_slide'), $args);
 	}
 } //end if eazy_flickity_slide exists
 ?>

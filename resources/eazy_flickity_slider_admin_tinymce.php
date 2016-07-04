@@ -19,7 +19,7 @@
 			<div id="eazy_slider_shortcode" class="eazy_slider_shortcode_form_display">
 				<select name="eazy_slider_name_select" id="eazy_slider_name_select">
 					<option value="">-Select-</option>
-						<?php $terms = get_terms( 'eazy_flickity_slider' ); 
+						<?php $terms = get_terms( 'eazy_flickity_slider' ); ?>
 							<?php if ($terms) : ?>
 								<?php foreach ( $terms as $term ) :?>
 									<option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>  

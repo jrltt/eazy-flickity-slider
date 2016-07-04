@@ -47,30 +47,25 @@ if (function_exists('eazy_flickity_slides')) {
 		$flickity_slides = array();
 
 		// The Loop
-		if ($eazyquery->have_posts() ) {				
-			//Check if slider name is set, if it is set add slider name to id
-			if (isset($eazy_flickity_slider)) { 
+		if ($eazyquery->have_posts() ) {
+			if (isset($eazy_flickity_slider)) : //Check if slider name is set, if it is set add slider name to id
 				$sliderid = "slider-". $eazy_flickity_slider ."";
 				$flickity_open = '<div class="gallery flickity-shortcode" id='.$sliderid.' >';
-			} else {
+			else:
 				$flickity_open = '<div class="gallery flickity-shortcode" id="all-slides">';
-			}//end if 
+			endif; 
 
-			while ( $eazyquery->have_posts() ) {
-				$eazyquery->the_post(); 
+			while ( $eazyquery->have_posts() ) : $eazyquery->the_post(); // here show the attachment images, not thumbnails
 				$thumb_id = get_post_thumbnail_id();
 				$eazyimage_attributes = wp_get_attachment_image_src($thumb_id,'full', true);
 				$flickity_slides[] = "
-				<div class='gallery-cell'>
-				<img src='".$eazyimage_attributes[0]."' 
-				alt='".get_post(get_post_thumbnail_id())->post_title."'>
-				</div>";
-			} //end while
+					<div class='gallery-cell'>
+						<img src='".$eazyimage_attributes[0]."' alt='".get_post(get_post_thumbnail_id())->post_title."'>
+					</div>";
+			endwhile;
 
 			$flickity_close = '</div>'; //closing div from class "gallery js flickity"
-		} else { // ???
-			// no slides found
-		}//end query
+		}
 
 		//restore original Post Data 
 		wp_reset_postdata();
