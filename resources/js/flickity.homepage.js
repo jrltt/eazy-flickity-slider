@@ -6,14 +6,14 @@
  */
 
 jQuery('.eazy-flickity-homepage-slider').flickity({
- // options
-autoPlay: true,
-cellAlign: 'center',
-contain: true,
-imagesLoaded: true,
-//freeScroll: true,
-lazyLoad: true,
-wrapAround: true,
-//cellSelector: '.gallery-cell',
-//setGallerySize: false
+	 // options
+	autoPlay: true,
+	cellAlign: 'center',
+	contain: true,
+	imagesLoaded: true,
+	//freeScroll: true,
+	lazyLoad: true,
+	wrapAround: true,
+	//cellSelector: '.gallery-cell',
+	//setGallerySize: false
 });

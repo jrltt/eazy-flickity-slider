@@ -1,14 +1,14 @@
 <?php 
 /*
-Plugin Name: Eazy Flickity Slider
-Plugin URI: http://robjscott.com/wordpress/
-Description:  Easily create slides to use with responsive sliders. Add them to page or post. Displays them using flickity.js by metafizzy.  
-Version: 1.2.1
-Author: Rob Scott, LLC
-Author URI: http://robjscott.com
-Text Domain: ez-flickity-slider
-License: GPLv2 or any later version
-License URI:  http://www.gnu.org/licenses/gpl-2.0.txt
+	Plugin Name: Eazy Flickity Slider
+	Plugin URI: http://robjscott.com/wordpress/
+	Description:  Easily create slides to use with responsive sliders. Add them to page or post. Displays them using flickity.js by metafizzy.  
+	Version: 1.2.1
+	Author: Rob Scott, LLC
+	Author URI: http://robjscott.com
+	Text Domain: ez-flickity-slider
+	License: GPLv2 or any later version
+	License URI:  http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
 // If this file is called directly, abort.
@@ -30,7 +30,7 @@ require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_shortco
 
 //add css & js
 add_action( 'wp_enqueue_scripts', 'eazy_flickity_scripts_styles' );
-function eazy_flickity_scripts_styles(){
+function eazy_flickity_scripts_styles() {
   wp_enqueue_style( 'eazy-flickity-slider',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/css/style.css' );
   wp_enqueue_script('flickity',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.pkgd.min.js', array('jquery'), false, true );
   wp_enqueue_script('flickity-shortcode',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.shortcode.js', array('jquery'), false, true );

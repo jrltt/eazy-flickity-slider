@@ -6,9 +6,9 @@
  */
 
 jQuery('.flickity-shortcode').flickity({
-autoPlay: true,
-cellAlign: 'center',
-contain: true,
-imagesLoaded: true,
-wrapAround: true,
+	autoPlay: true,
+	cellAlign: 'center',
+	contain: true,
+	imagesLoaded: true,
+	wrapAround: true,
 });
