@@ -89,31 +89,31 @@ if (function_exists('eazy_flickity_slides')) {
 			
 			foreach ($posts as $post) {
 				if (preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches ) &&
-					array_key_exists( 2, $matches ) && in_array( 'eazy-flickity-slider', $matches[2] )) {
-						foreach ($matches[0] as $key => $value) {
-							$matches[$key] = $value;
-							
-							$eznameflag = '~eazy_flickity_slider="(.*?)"~';
-							$ezwidthflag = '~width="(.*?)"~';
-							$ezheightflag = '~height="(.*?)"~';
-							$thiswidth = '';
-							$thisheight = '';
+						array_key_exists( 2, $matches ) && in_array( 'eazy-flickity-slider', $matches[2] )) {
+					foreach ($matches[0] as $key => $value) {
+						$matches[$key] = $value;
+						
+						$eznameflag = '~eazy_flickity_slider="(.*?)"~';
+						$ezwidthflag = '~width="(.*?)"~';
+						$ezheightflag = '~height="(.*?)"~';
+						$thiswidth = '';
+						$thisheight = '';
 
-							if (preg_match($eznameflag, $value, $m)) {
-								$thisname = $m[1];
-								//$matches[$key] .= ['sliderid' => $thisname];
-							}
-							if (preg_match($ezwidthflag, $value, $m)) {
-								$thiswidth = $m[1];
-								//$matches[$key] .= ['width' => $thiswidth];
-							}
-							if (preg_match($ezheightflag, $value, $m)) {
-								$thisheight = $m[1];
-								//$matches[$key] .= ['height' => $thisheight];
-							}
-
-							$matches[$key] = ['sliderid' => $thisname, 'width' => $thiswidth, 'height' => $thisheight];
+						if (preg_match($eznameflag, $value, $m)) {
+							$thisname = $m[1];
+							//$matches[$key] .= ['sliderid' => $thisname];
 						}
+						if (preg_match($ezwidthflag, $value, $m)) {
+							$thiswidth = $m[1];
+							//$matches[$key] .= ['width' => $thiswidth];
+						}
+						if (preg_match($ezheightflag, $value, $m)) {
+							$thisheight = $m[1];
+							//$matches[$key] .= ['height' => $thisheight];
+						}
+
+						$matches[$key] = ['sliderid' => $thisname, 'width' => $thiswidth, 'height' => $thisheight];
+					}
 					break;  
 				} //end if preg match
 			} //end foreach
