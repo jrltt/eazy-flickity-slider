@@ -17,15 +17,15 @@
 			</div>
 
 			<div id="eazy_slider_shortcode" class="eazy_slider_shortcode_form_display">
-				<select name="eazy_slider_name_select" id="eazy_slider_name_select">
-					<option value="">-Select-</option>
-						<?php $terms = get_terms( 'eazy_flickity_slider' ); ?>
-							<?php if ($terms) : ?>
-								<?php foreach ( $terms as $term ) :?>
-									<option value="<?php echo $term->slug; ?>"><?php echo $term->name; ?></option>  
-								<?php endforeach; ?>     
-							<?php endif; ?>
-				</select>
+						<?php	$slides = get_posts('post_type=eazy_flickity_slide'); ?>
+						<?php if ($slides) : ?>
+							<select name="eazy_slider_name_select" id="eazy_slider_name_select">
+							<option value="">-Select-</option>
+								<?php foreach ($slides as $key => $value) : ?>
+									<option value="<?php echo $value->ID; ?>"><?php echo $value->post_title; ?></option>  
+								<?php endforeach; ?>
+								</select>
+						<?php endif; ?>
 
 				<div class="eazy_slider_shortcode_form">
 					<p class="form_instructions"><?php _e("Insert the max width and/or height of your slider images.", 'ez-flickity-slider' ); ?></p>
