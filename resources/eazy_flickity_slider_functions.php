@@ -6,14 +6,14 @@ if (!function_exists('eazy_flickity_slides')) {
 
 	function eazy_flickity_slides() { // register custom post type to be used as slider images
 	  $labels = array(
-			'name'                => _x( 'Eazy Flickity Slides', 'Post Type General Name', 'ez-flickity-slider' ),
-			'singular_name'       => _x( 'Eazy Flickity Slide', 'Post Type Singular Name', 'ez-flickity-slider' ),
-			'menu_name'           => __( 'Eazy Flickity Slider', 'ez-flickity-slider' ),
-			'name_admin_bar'      => __( 'Eazy Flickity Slide', 'ez-flickity-slider' ),
+			'name'                => _x( 'Ez Flickity Slides', 'Post Type General Name', 'ez-flickity-slider' ),
+			'singular_name'       => _x( 'EzF Slide', 'Post Type Singular Name', 'ez-flickity-slider' ),
+			'menu_name'           => __( 'Ez Flickity Slider', 'ez-flickity-slider' ),
+			'name_admin_bar'      => __( 'EzF Slide', 'ez-flickity-slider' ),
 			'parent_item_colon'   => __( 'Parent Item:', 'ez-flickity-slider' ),
-			'all_items'           => __( 'All Slides', 'ez-flickity-slider' ),
-			'add_new_item'        => __( 'Add New Slide', 'ez-flickity-slider' ),
-			'add_new'             => __( 'Add New Slide', 'ez-flickity-slider' ),
+			'all_items'           => __( 'All Sliders', 'ez-flickity-slider' ),
+			'add_new_item'        => __( 'Add New Slider item', 'ez-flickity-slider' ),
+			'add_new'             => __( 'Add New', 'ez-flickity-slider' ),
 			'new_item'            => __( 'New Slide', 'ez-flickity-slider' ),
 			'edit_item'           => __( 'Edit Slide', 'ez-flickity-slider' ),
 			'update_item'         => __( 'Update Slide', 'ez-flickity-slider' ),
@@ -24,7 +24,7 @@ if (!function_exists('eazy_flickity_slides')) {
 	  );
 	  $args = array(
 			'label'               => __( 'eazy_flickity_slide', 'ez-flickity-slider' ),
-			'description'         => __( 'Eazy Flickity Slide', 'ez-flickity-slider' ),
+			'description'         => __( 'EzF Slide', 'ez-flickity-slider' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'thumbnail', 'editor' ),
 			'hierarchical'        => false,
@@ -48,9 +48,9 @@ if (!function_exists('eazy_flickity_slides')) {
 	// register custom taxonomy to be used as slider names
 	function eazy_flickity_slider() {
 	  $labels = array(
-			'name'                       => _x( 'Eazy Flickity Sliders', 'Taxonomy General Name', 'ez-flickity-slider' ),
-			'singular_name'              => _x( 'Eazy Flickity Slider', 'Taxonomy Singular Name', 'ez-flickity-slider' ),
-			'menu_name'                  => __( 'Eazy Flickity Sliders', 'ez-flickity-slider' ),
+			'name'                       => _x( 'EzF Tax Sliders', 'Taxonomy General Name', 'ez-flickity-slider' ),
+			'singular_name'              => _x( 'EzF Slider', 'Taxonomy Singular Name', 'ez-flickity-slider' ),
+			'menu_name'                  => __( 'EzF Tax Sliders', 'ez-flickity-slider' ),
 			'all_items'                  => __( 'All Eazy Flickity Sliders', 'ez-flickity-slider' ),
 			'parent_item'                => __( 'Parent Slider', 'ez-flickity-slider' ),
 			'parent_item_colon'          => __( 'Parent Slider:', 'ez-flickity-slider' ),
